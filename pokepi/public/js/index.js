@@ -71,6 +71,16 @@
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
 
+    var findPokemon = function() {
+        var a = $('#slider1').val();
+        var b = $('#slider2').val();
+        var c = $('#slider3').val();
+        var d = $('#slider4').val();
+
+        serverService(a, b, c, d);
+        return true;
+    };
+
     //Service to talk to node server
     //param: toSend represents the JSON object to post to the server
     var serverService = function(a, b, c, d) {
@@ -109,9 +119,9 @@
             c: c,
             d: d
         }
-
+        console.log("1: " + a + " 2: " + b + " 3: " + c + " 4: " + d);
         //TODO: enter server url here
         var url = "enter here";
 
-        $.post(url, data, success, "json");
+        //$.post(url, piData, success, "json");
     }
