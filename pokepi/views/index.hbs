@@ -120,21 +120,6 @@
                   <option>6.0</option>
                 </datalist>
                 </form>
-
-                <script>
-
-                  for (var x = 1; x < 5; x++){
-                    var sliderProp = "slider" + x;
-                    var sliderOutput = "slider" + x + "Output";
-
-                    function sliderOutputDisplay () {
-                      document.sliders[sliderOutput].value = document.sliders[sliderProp].value + ' Sigma';
-                    }
-                    document.sliders[sliderProp].oninput = sliderOutputDisplay;
-
-                  }
-
-                </script>
             </div>
             <a href="#pokemon" class="btn btn-dark btn-lg" onclick="return findPokemon()">Find Your Pokemon</a>
         </div>
