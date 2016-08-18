@@ -4,3 +4,11 @@
 .text-vertical-center {
 	color: #F8F8FF;
 }
+#pokePicture {
+	float: left;
+	width: 50%;
+}
+#pokeStats {
+	float: right;
+	width: 50%;
+}
