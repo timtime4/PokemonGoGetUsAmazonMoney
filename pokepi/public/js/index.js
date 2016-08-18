@@ -160,7 +160,7 @@
             var weight = data.weight;
 
             //get main pokemon type
-            var types = data.types[data.types.length - 1].type.name;
+            var type = data.types[data.types.length - 1].type.name;
             /*
                 get pokemon types
             data.types.forEach(function(type) {
@@ -174,6 +174,10 @@
             c: c,
             d: d
         }
+
+        var type = "electric";
+        $('#pokeDescription').css('background-color', '#' + pickColor(type));
+
         console.log("1: " + a + " 2: " + b + " 3: " + c + " 4: " + d);
         //TODO: enter server url here
         var url = "enter here";
