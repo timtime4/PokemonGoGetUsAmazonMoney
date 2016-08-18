@@ -70,3 +70,48 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+
+    //Service to talk to node server
+    //param: toSend represents the JSON object to post to the server
+    var serverService = function(a, b, c, d) {
+        //data is a single pokemon's data sent from the server
+        var success = function(data, status, xhr) {
+            //TODO: *figure out what data is received from the server
+            //      *populate the page with the pokemon data and paragraph
+            var pokeName = data.name;
+
+            //get the pokemon move names from the json
+            var moves = {};
+            data.moves.forEach(function(move) {
+                moves.push(move.move.name);
+            });
+
+            var spritesUrl = {
+                front: data.sprites.front_default,
+                frontShiny: data.sprites.front_shiny,
+                back: data.sprites.back_default,
+                backShiny: data.sprites.back_shiny,
+            }
+
+            var height = data.height;
+            var weight = data.weight;
+
+            var types = {};
+            //get pokemon types
+            data.types.forEach(function(type) {
+                types.push(type.type.name);
+            });
+        }
+
+        var piData = {
+            a: a,
+            b: b,
+            c: c,
+            d: d
+        }
+
+        //TODO: enter server url here
+        var url = "enter here";
+
+        $.post(url, data, success, "json");
+    }
