@@ -106,11 +106,13 @@
             var height = data.height;
             var weight = data.weight;
 
-            var types = {};
-            //get pokemon types
+            //get main pokemon type
+            var types = data.types[data.types.length - 1].type.name;
+            /*
+                get pokemon types
             data.types.forEach(function(type) {
                 types.push(type.type.name);
-            });
+            });*/
         }
 
         var piData = {
