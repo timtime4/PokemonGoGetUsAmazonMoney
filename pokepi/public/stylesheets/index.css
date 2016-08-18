@@ -8,7 +8,8 @@
 	float: left;
 	width: 50%;
 }
-#pokeStats {
+#pokeDescription {
+	background-color: #B22222;
 	}
 .pokePic {
 	display: flex;
