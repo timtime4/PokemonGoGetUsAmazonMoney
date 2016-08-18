@@ -248,3 +248,8 @@ footer {
   bottom: 5px;
   right: 5px;
 }
+
+.sliders {
+  width: 50%;
+  margin: 0 auto;
+}
