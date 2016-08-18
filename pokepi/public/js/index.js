@@ -71,6 +71,69 @@
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
 
+    var findPokemon = function() {
+        var a = $('#slider1').val();
+        var b = $('#slider2').val();
+        var c = $('#slider3').val();
+        var d = $('#slider4').val();
+
+        serverService(a, b, c, d);
+        return true;
+    };
+    var pickColor = function(t) {
+        var type = t || "normal";
+        var color = "";
+        switch(type) {
+            case "fire":
+                color = "B22222";
+                break;
+            case "grass":
+                color = "228b22";
+                break;
+            case "water":
+                color = "1E90FF";
+                break;
+            case "electric":
+                color = "E6c300";
+                break;
+            case "poison":
+                color = "8a2be2";
+                break;
+            case "bug":
+                color = "c3df41";
+                break;
+            case "dark":
+                color = "2d1606";
+                break;
+            case "ghost":
+                color = "4e3cc3";
+                break;
+            case "normal":
+                color = "cecece";
+                break;
+            case "fighting":
+                color = "a22a2a";
+                break;
+            case "psychic":
+                color = "f08080";
+                break;
+            case "rock":
+                color = "d2b48c";
+                break;
+            case "ground":
+                color = "c7a14b";
+                break;
+            case "steel" :
+                color = "7b7c79";
+                break;
+            default: 
+                color = "black";
+                break;
+        }
+        return color;
+
+    }
+
     //Service to talk to node server
     //param: toSend represents the JSON object to post to the server
     var serverService = function(a, b, c, d) {
@@ -109,11 +172,11 @@
             c: c,
             d: d
         }
-
+        console.log("1: " + a + " 2: " + b + " 3: " + c + " 4: " + d);
         //TODO: enter server url here
         var url = "enter here";
 
-        $.post(url, data, success, "json");
+        //$.post(url, piData, success, "json");
     }
 
     function sliderOutputDisplay (sliderOutput, sliderProp) {
