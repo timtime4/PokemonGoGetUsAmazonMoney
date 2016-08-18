@@ -192,6 +192,5 @@
     for (var x = 1; x < 5; x++){
       var sliderProp = "slider" + x;
       var sliderOutput = "slider" + x + "Output";
-
       document.sliders[sliderProp].oninput = sliderOutputDisplay.bind(undefined, sliderOutput, sliderProp);
     }
