@@ -10,6 +10,7 @@
 }
 #pokeDescription {
 	background-color: #B22222;
+	padding: 100px 0px;
 	}
 .pokePic {
 	display: flex;
