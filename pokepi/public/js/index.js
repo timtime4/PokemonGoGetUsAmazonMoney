@@ -123,7 +123,7 @@
         //TODO: enter server url here
         var url = "enter here";
 
-        $.post(url, piData, success, "json");
+        $.post(url, data, success, "json");
     }
 
     function sliderOutputDisplay (sliderOutput, sliderProp) {
