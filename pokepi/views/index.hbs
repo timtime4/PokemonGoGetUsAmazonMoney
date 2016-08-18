@@ -40,22 +40,106 @@
             <h3>What Pokemon are you??</h3>
             <br>
             <div class="sliders">
-              <label for="slider1">Dominance</label>
-                <input id="slider1" type ="range" min ="-6.0" max="6.0" step ="0.2"/>
-              <br>
-              <label for="slider2">Extroversion</label>
-                <input id="slider2" type ="range" min ="-6.0" max="6.0" step ="0.2"/>
-              <br>
-              <label for="slider3">Patience</label>
-                <input id="slider3" type ="range" min ="-6.0" max="6.0" step ="0.2"/>
-              <br>
-              <label for="slider4">Formality</label>
-                <input id="slider4" type ="range" min ="-6.0" max="6.0" step ="0.2"/>
+                <form name="sliders">
+                <label for="slider1">Dominance</label>
+                  <input id="slider1" type ="range" list="steplist" min ="-6.0" max="6.0" step ="0.2"/>
+                  <output name="slider1Output" id="slider1Output">0.0 Sigma</output>
+                <br>
+                <label for="slider2">Extroversion</label>
+                  <input id="slider2" type ="range" list="steplist" min ="-6.0" max="6.0" step ="0.2"/>
+                  <output name="slider2Output" id="slider2Output">0.0 Sigma</output>
+                <br>
+                <label for="slider3">Patience</label>
+                  <input id="slider3" type ="range" list="steplist" min ="-6.0" max="6.0" step ="0.2"/>
+                  <output name="slider3Output" id="slider3Output">0.0 Sigma</output>
+                <br>
+                <label for="slider4">Formality</label>
+                  <input id="slider4" type ="range" list="steplist" min ="-6.0" max="6.0" step ="0.2"/>
+                  <output name="slider4Output" id="slider4Output">0.0 Sigma</output>
+                <datalist id="steplist">
+                  <option>-6.0</option>
+                  <option>-5.8</option>
+                  <option>-5.6</option>
+                  <option>-5.4</option>
+                  <option>-5.2</option>
+                  <option>-5.0</option>
+                  <option>-4.8</option>
+                  <option>-4.6</option>
+                  <option>-4.4</option>
+                  <option>-4.2</option>
+                  <option>-4.0</option>
+                  <option>-3.8</option>
+                  <option>-3.6</option>
+                  <option>-3.4</option>
+                  <option>-3.2</option>
+                  <option>-3.0</option>
+                  <option>-2.8</option>
+                  <option>-2.6</option>
+                  <option>-2.4</option>
+                  <option>-2.2</option>
+                  <option>-2.0</option>
+                  <option>-1.8</option>
+                  <option>-1.6</option>
+                  <option>-1.4</option>
+                  <option>-1.2</option>
+                  <option>-1.0</option>
+                  <option>-0.8</option>
+                  <option>-0.6</option>
+                  <option>-0.4</option>
+                  <option>-0.2</option>
+                  <option>0.0</option>
+                  <option>0.2</option>
+                  <option>0.4</option>
+                  <option>0.6</option>
+                  <option>0.8</option>
+                  <option>1.0</option>
+                  <option>1.2</option>
+                  <option>1.4</option>
+                  <option>1.6</option>
+                  <option>1.8</option>
+                  <option>2.0</option>
+                  <option>2.2</option>
+                  <option>2.4</option>
+                  <option>2.6</option>
+                  <option>2.8</option>
+                  <option>3.0</option>
+                  <option>3.2</option>
+                  <option>3.4</option>
+                  <option>3.6</option>
+                  <option>3.8</option>
+                  <option>4.0</option>
+                  <option>4.2</option>
+                  <option>4.4</option>
+                  <option>4.6</option>
+                  <option>4.8</option>
+                  <option>5.0</option>
+                  <option>5.2</option>
+                  <option>5.4</option>
+                  <option>5.6</option>
+                  <option>5.8</option>
+                  <option>6.0</option>
+                </datalist>
+                </form>
+
+                <script>
+
+                  for (var x = 1; x < 5; x++){
+                    var sliderProp = "slider" + x;
+                    var sliderOutput = "slider" + x + "Output";
+
+                    function sliderOutputDisplay () {
+                      document.sliders[sliderOutput].value = document.sliders[sliderProp].value + ' Sigma';
+                    }
+                    document.sliders[sliderProp].oninput = sliderOutputDisplay;
+
+                  }
+
+                </script>
             </div>
             <a href="#pokemon" class="btn btn-dark btn-lg">Find Your Pokemon</a>
         </div>
     </header>
-<div class="pokemonInfo"> 
+<div class="pokemonInfo">
     <!-- Pokemon -->
     <section id="pokemon" class="pokemon">
         <div class="container">
