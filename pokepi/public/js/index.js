@@ -15,6 +15,8 @@
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
+                    //TODO - unhide the bottom pages
+                    $('.pokemonInfo').css('display', 'block');
                     $('html,body').animate({
                         scrollTop: target.offset().top
                     }, 1000);
