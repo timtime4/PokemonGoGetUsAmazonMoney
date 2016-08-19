@@ -26,7 +26,7 @@
                             }, 1000);
                         $("#pokeButton").html("Find Your Pokemon")
                         return false;
-                    }, 2000); 
+                    }, 4000); 
                      
                 }
             }
@@ -183,6 +183,7 @@
             var pokeapiUrl = "http://pokeapi.kevgriffin.com/api/v2/pokemon/" + pokeName;
             changeDescription(data.description);
             console.log(data.description);
+            $('#piType').html(data.name);
 
             $.get(pokeapiUrl, pokeSuccess, "json");
         }
@@ -206,7 +207,7 @@
       document.sliders[sliderOutput].value = document.sliders[sliderProp].value + ' Sigma';
     }
     function changeDescription(descr) {
-        $("#pokeStats").html(descr);
+        $("#piDescription").html(descr);
     }
     function changeColor(type) {
         $('#pokeDescription').css('background-color', '#' + pickColor(type));
