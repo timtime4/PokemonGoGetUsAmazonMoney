@@ -138,7 +138,7 @@
     //param: toSend represents the JSON object to post to the server
     var serverService = function(a, b, c, d) {
         //data is a single pokemon's data sent from the server
-        var success = function(data, status, xhr) {
+        var pokeSuccess = function(data, status, xhr) {
             //TODO: *figure out what data is received from the server
             //      *populate the page with the pokemon data and paragraph
             var pokeName = data.name;
@@ -161,11 +161,13 @@
 
             //get main pokemon type
             var type = data.types[data.types.length - 1].type.name;
-            /*
-                get pokemon types
-            data.types.forEach(function(type) {
-                types.push(type.type.name);
-            });*/
+        }
+
+        var success = function(data, status, xhr) {
+            var pokeNum = data.num;
+            var pokeapiUrl = "http://pokeapi.co/api/v2/pokemon/" + pokeNum;
+
+            //$.get(pokeapiUrl, pokeSuccess, "json");
         }
 
         var piData = {
