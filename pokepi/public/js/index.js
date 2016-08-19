@@ -16,11 +16,18 @@
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     //TODO - unhide the bottom pages
-                    $('.pokemonInfo').css('display', 'block');
-                    $('html,body').animate({
+                    setTimeout(function() {
+                        $("#pokeButton").html("Calculating...")
+                    }, 500);
+                    setTimeout(function() {
+                        $('.pokemonInfo').css('display', 'block');
+                        $('html,body').animate({
                         scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
+                            }, 1000);
+                        $("#pokeButton").html("Find Your Pokemon")
+                        return false;
+                    }, 2000); 
+                     
                 }
             }
         });
@@ -190,6 +197,9 @@
         var url = "https://obscure-caverns-26110.herokuapp.com/?" + $.param(piData);
 
         $.get(url, success, "json");
+    }
+    function display() {
+
     }
 
     function sliderOutputDisplay (sliderOutput, sliderProp) {
