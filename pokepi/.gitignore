@@ -124,3 +124,6 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+# ignore node_modules
+../pokeserver/node_modules
