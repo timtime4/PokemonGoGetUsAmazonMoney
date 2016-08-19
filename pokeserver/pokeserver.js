@@ -2,7 +2,7 @@
 
 const express = require('express')  
 const app = express()  
-const port = 3001
+const port = process.env.PORT || 3000
 var MongoClient = require('mongodb').MongoClient;
 
 var cors = require('cors');
@@ -35,7 +35,7 @@ app.get('/', (request, response) => {
 	});
 })
 
-app.listen(process.env.PORT || port, (err) => {  
+app.listen(port, (err) => {  
   if (err) {
     return console.log('something bad happened', err)
   }
@@ -68,8 +68,9 @@ var getPokemon = function(shape, cb){
           	var rand = Math.floor((Math.random() * (docs.length)));
           //	console.log("random number: " + rand);
 			//console.log(docs[rand].number);
-			var pokemonNumber = parseInt(docs[rand].number);
-			console.log(pokemonNumber);
+			//var pokemonNumber = parseInt(docs[rand].number);
+			var pokemon = docs[rand].pokemon;
+			//console.log(pokemonNumber);
 
 
 		var collection = db.collection('description');
@@ -79,10 +80,11 @@ var getPokemon = function(shape, cb){
        //   	console.log("random number: " + rand);
 			//console.log(docs[rand].number);
 			var description = docs[0].description;
+			var name = docs[0].name;
 
 			console.log(description);
 			
-			var toReturn = {pokemonNumber: pokemonNumber, description: description}
+			var toReturn = {pokemon: pokemon, name: name, description: description}
 
 			//var toReturn = {pokemonNumber: pokemonNumber}
 			cb(toReturn);
