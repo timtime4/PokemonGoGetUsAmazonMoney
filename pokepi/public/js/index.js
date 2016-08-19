@@ -175,7 +175,7 @@
             d: d
         }
 
-        var type = "electric";
+        var type = "fire";
         $('#pokeDescription').css('background-color', '#' + pickColor(type));
 
         console.log("1: " + a + " 2: " + b + " 3: " + c + " 4: " + d);
@@ -188,6 +188,10 @@
     function sliderOutputDisplay (sliderOutput, sliderProp) {
       document.sliders[sliderOutput].value = document.sliders[sliderProp].value + ' Sigma';
     }
+    function changeDescription() {
+        $("#pokeStats").html("You prescribe to the venturer personality! You're not afraid to stick up for your own ideas and defend what you know is right. Understanding the technical details of your current task are a must, and as a result, you excel at problem solving. While you're not in love with delegating important tasks, you do love healthy debate for knowledge it affords you. Back in high school, you'd get in an argument with that wordy substitute for Mr. Brown's history class just to make a point to the class. You usually don't tell people this, but that substitute definitely went out into the hall and cried after that - savage bro!");
+    }
+    changeDescription();
 
     for (var x = 1; x < 5; x++){
       var sliderProp = "slider" + x;

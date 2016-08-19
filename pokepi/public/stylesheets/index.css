@@ -109,10 +109,14 @@ input[type=range].slider:focus::-ms-fill-upper {
 }
 #pokeDescription {
 	background-color: #B22222;
-	padding: 100px 0px;
+	padding: 75px 0px;
 	}
 .pokePic {
 	display: flex;
+}
+#pokeStats {
+	width: 50%;
+	font-size: 20px;
 }
 #pokemonContainer {
 	display: inline-flex;
