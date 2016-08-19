@@ -143,11 +143,11 @@
             //      *populate the page with the pokemon data and paragraph
             var pokeName = data.name;
             console.log("name: " + pokeName);
-            $("#pokeName").html(pokeName);
+            $("#pokeName").html(capitalizeFirstLetter(pokeName));
             //get main pokemon type
             var type = data.types[data.types.length - 1].type.name;
             changeColor(type);
-            $("#pokeType").html(type);
+            $("#pokeType").html(capitalizeFirstLetter(type));
 
             //get the pokemon move names from the json
             //var moves = [];
@@ -201,6 +201,9 @@
     function changeColor(type) {
         $('#pokeDescription').css('background-color', '#' + pickColor(type));
     }
+    function capitalizeFirstLetter(word) {
+        return word.substr(0,1).toUpperCase()+word.substr(1);
+    }
     changeDescription();
 
     for (var x = 1; x < 5; x++){
